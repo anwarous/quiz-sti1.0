@@ -1,59 +1,88 @@
-# Quiz STI
+GitHub
 
-> Réviser la matière **Sciences et Technologies de l’Informatique** avec un quiz simple, léger et utilisable directement dans le navigateur.
+✨ Fonctionnalités
 
-Quiz STI s’adresse aux élèves de **3ᵉ et 4ᵉ années Sciences Informatiques en Tunisie**. Il propose des questions, calcule le score et affiche un récapitulatif à la fin.
+Quiz côté client (aucun backend requis).
+Banque de questions chargée depuis le dossier data/.
+Interface légère et responsive.
+Calcul de score et récapitulatif de fin.
+Images/brand : logo.png (optionnel pour l’en-tête).
 
-## ✨ Ce que propose le quiz
+📦 Structure du projet
+quiz-sti/
+├─ index.html       # Page principale (ouvre le quiz)
+├─ app.js           # Logique du quiz (chargement questions, navigation, score)
+├─ data/            # Jeux de questions (JSON/…)
+├─ logo.png         # Logo du projet (facultatif)
+└─ LICENSE          # GPL-3.0
 
-- Fonctionne côté navigateur, sans backend
-- Charge les questions depuis le dossier `data/`
-- Affiche le score et un récapitulatif de fin
-- Offre une interface légère et adaptée aux petits écrans
+🚀 Démarrage rapide
 
-## 🚀 Démarrer
+Cloner le dépôt :
+git clone https://github.com/fodel/quiz-sti.git
+cd quiz-sti
 
-Clonez le dépôt et ouvrez `index.html` dans un navigateur :
+Lancer localement :
 
-```bash
-git clone https://github.com/anwarous/quiz-sti1.0.git
-cd quiz-sti1.0
-```
+Option 1 : double-clique simplement sur index.html (suffit pour la plupart des navigateurs).
 
-Pour servir le projet en local avec Python :
+Option 2 (recommandée) : servir en local pour éviter des soucis CORS :
 
-```bash
+# Python 3
 python -m http.server 8000
-```
+# puis ouvre http://localhost:8000 dans ton navigateur
 
-Puis ouvrez [http://localhost:8000](http://localhost:8000).
+🧩 Données des questions
 
-## 🗂️ Organisation
+Place tes fichiers de questions dans data/.
+Tu peux organiser par thème, niveau ou chapitre (ex. sti-reseaux.json, algorithmes-4SI.json, etc.).
+Assure-toi que app.js charge les bons fichiers (voir variable/fonction de chargement des données).
+Consulte les exemples présents dans data/ et adapte le format de manière cohérente.
 
-```text
-index.html    Page du quiz
-app.js        Navigation, chargement des questions et score
-data/         Jeux de questions
-logo.png      Logo facultatif
-LICENSE       Licence GPL-3.0
-```
+🖥️ Personnalisation
 
-## ➕ Ajouter des questions
+Logo/Titre : remplace logo.png et mets à jour le titre dans index.html.
+Styles : ajoute un fichier CSS ou des styles dans index.html.
+Feedback : dans app.js, tu peux activer/désactiver l’affichage des réponses correctes à la fin du quiz.
 
-Ajoutez les fichiers de questions dans `data/`, puis vérifiez que leur format correspond à celui attendu par le chargement dans `app.js`. Vous pouvez organiser les jeux par thème, niveau ou chapitre.
+✅ Bonnes pratiques pédagogiques
 
-## 🛠️ Pistes d’évolution
+Mélange QCM, vrai/faux, complétion de code (pour STI/4SI).
+Varie le niveau de difficulté (débutant → avancé).
+Ajoute des explications après chaque réponse pour renforcer l’apprentissage.
 
-- Mode examen et chronomètre
-- Filtrage par niveau ou chapitre
-- Explications après les réponses
-- Export des résultats
-- Traductions en arabe et en anglais
+🧪 Tests & Qualité
+Ouvre le quiz et parcours un jeu de questions complet.
+Vérifie :
+le chargement des données,
+le calcul du score,
+le comportement sur mobile,
+les cas limites (aucune question, formats inattendus).
 
-## 🤝 Contribuer
+🤝 Contribuer
+Les contributions sont les bienvenues !
 
-Les contributions sont les bienvenues. Forkez le dépôt, créez une branche pour votre changement, puis ouvrez une pull request avec une courte description.
+Fork le repo
+Crée une branche : git checkout -b feat/nouvelle-fonction
+Commit : git commit -m "Ajoute: …"
+Push : git push origin feat/nouvelle-fonction
+Ouvre une Pull Request
 
-## 📄 Licence
+N’oublie pas :
+d’ajouter/adapter les fichiers dans data/,
+d’inclure des exemples de questions et un court README de données si tu ajoutes un nouveau format.
 
-Distribué sous licence [GPL-3.0](LICENSE).
+🗺️ Roadmap (suggestions)
+Chronomètre par question/série.
+Mode examen (désactive indication immédiate).
+Filtrage par niveau / chapitre.
+Export des résultats (CSV/JSON).
+Localisation (français → arabe/anglais).
+Hébergement via GitHub Pages (Settings → Pages).
+
+📄 Licence
+Ce projet est sous licence GPL-3.0 – voir le fichier LICENSE.
+
+👤 Auteur
+Abidi Mohamed Fadhel — mainteneur du projet.
+L’objectif est d’offrir un outil simple et libre pour réviser la matière STI en 3ᵉ/4ᵉ années sciences informatiques en Tunisie.
